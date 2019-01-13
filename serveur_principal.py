@@ -111,6 +111,7 @@ def client_thread(connection, ip, port, max_buffer_size = 5120):
             joueur_cible = nouveaux_ips[a_malusser]
             #Et on envoie à sa voiture le paquet correspondant
             pack_malus = create_packet(SEND_MALUS, "")
+            global ip_et_co
             ip_et_co[joueur_cible].sendall(pack_malus)
 
         #Pour savoir si un joueur a le droit d'envoyer des malus, on décide ça au hasard, ici les probabilités sont assez faibles
