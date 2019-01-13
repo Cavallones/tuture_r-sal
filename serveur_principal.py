@@ -89,6 +89,7 @@ def client_thread(connection, ip, port, max_buffer_size = 5120):
             parle_voiture = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             parle_voiture.connect(donnees["ip"], donnees["port"])
             #On enregistre la socket dans notre dictionnaire global
+            global ip_et_co
             ip_et_co[donnees["ip"]] = parle_voiture
             #Et on créé un tableau en retirant notre voiture du tableau ip_gens : on ne veut pas pouvoir s'envoyer de malus à nous même !
             nouveaux_ips = ip_gens.remove(donnees[0])
